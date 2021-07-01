@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Wellcome</title> 
+</head>
+<body>
+    <div class="page">
+        <div class="werep">
+            <div class="pageLeft">
+                <div class="top">
+                    <div class="formDiv">
+                        <span id="span1"> Login Account </span>
+                        <form action="" method="post" id="form">
+                            <div class="form-field__control" id="inputemail">
+                                <input id="email" type="email" class="form-field__input" autocomplete="none" onkeydown="validation()" placeholder="Your Email " /> 
+                                <img src="images/check-circle.gif" id="emailCheck" alt="">
+                                <div class="form-field__bar"></div>
+                            </div>
+                            <div class="form-field__control">
+                                <input id="myInput" type="password" class="form-field__input" placeholder="Your password" /> <img src="images/blink.png" id="Eyeimg" onclick="myFunction()" alt="">
+                                <div class="form-field__bar"></div>
+                            </div>
+                            <div class="bottom">
+                                <a href="#" id="pswdA"> Forgot password? </a>
+                                <button type="submit" name="sign_in"> Sign In </button>
+                            </div>
+                        </form>
+                    </div>
+                   <p> Dosen`t have an account yet? <span id="span3"> <a href="#">Sign Up</a> </span> </p> 
+               </div>
+            </div>
+            <div class="pageRight">
+                <img src="images/3907317.jpg" alt=""> <a href='https://www.freepik.com/free-photos-vectors/user'></a>
+            </div>
+        </div>
+    </div> 
+    <script>
+
+        function validation(){
+            var form = document.getElementById("form");
+            var img = document.getElementById("emailCheck");
+            var email = document.getElementById("email").value;
+            var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (email.match(pattern)){
+                form.classList.add("valid");
+                form.classList.remove("invalid");
+                img.style.display = "grid";
+            }
+            else{
+                form.classList.add("invalid");
+                form.classList.remove("valid");
+                img.style.display = "none";
+            }
+
+            if (email == "") {
+                form.classList.remove("valid");
+                form.classList.remove("invalid");
+                img.style.display = "none";
+            }
+        }
+
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            var img  = document.getElementById("Eyeimg");
+            if (x.type === "password") {
+                x.type = "text";
+                img.src="images/blink.png"
+            } else {
+                x.type = "password";
+                img.src="images/eye (1).png"
+            }
+        }
+    </script>
+</body>
+</html>
