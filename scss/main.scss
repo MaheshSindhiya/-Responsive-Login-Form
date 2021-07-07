@@ -2,6 +2,8 @@
 
 $primary-color: #007dfe;
 $animation-duration: 0.4s;
+$mobile: 800px;
+$tablate: 1000px;
 
 @mixin label-inactive() {
     font-size: 1.2rem;
@@ -11,6 +13,18 @@ $animation-duration: 0.4s;
 @mixin label-active() {
     font-size: 0.75rem;
     transform: translateY(-14px);
+}
+
+@mixin mobile (){
+    @media (max-width : $mobile) {
+        @content;
+    }
+}
+
+@mixin tablate (){
+    @media (max-width : $tablate) {
+        @content;
+    }
 }
 
 a{
@@ -26,7 +40,7 @@ img {
     height: 100%;
     position: relative;
     width: 130%;
-    left: -15px;;
+    left: -6px;;
 }
 
 button {
@@ -74,6 +88,33 @@ button {
             display: grid;
             place-content: center;
         }
+
+        @include mobile{
+            .pageRight{
+                display: none;
+            }
+
+            .pageLeft{
+                height: 90vh;
+                width: 80vw;
+                display: grid;
+                place-content: center;
+            }
+        }
+        
+        @include tablate(){
+            .pageRight{
+                display: none;
+            }
+
+            .pageLeft{
+                height: 90vh;
+                width: 80vw;
+                display: grid;
+                place-content: center;
+            }
+        }
+        
     }
 }
 

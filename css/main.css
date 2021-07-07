@@ -18,7 +18,7 @@ img {
   height: 100%;
   position: relative;
   width: 130%;
-  left: -15px;
+  left: -6px;
 }
 
 button {
@@ -72,6 +72,32 @@ button:hover {
   display: -ms-grid;
   display: grid;
   place-content: center;
+}
+
+@media (max-width: 800px) {
+  .page .werep .pageRight {
+    display: none;
+  }
+  .page .werep .pageLeft {
+    height: 90vh;
+    width: 80vw;
+    display: -ms-grid;
+    display: grid;
+    place-content: center;
+  }
+}
+
+@media (max-width: 1000px) {
+  .page .werep .pageRight {
+    display: none;
+  }
+  .page .werep .pageLeft {
+    height: 90vh;
+    width: 80vw;
+    display: -ms-grid;
+    display: grid;
+    place-content: center;
+  }
 }
 
 .form-field__control {
